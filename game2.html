@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html>
+<head><title>GAME</title>
+<style type="text/css">
+* {
+		color:white;
+		font-family:Courier new;
+		}
+	body {
+			background-color:#128bb8;
+			}
+			
+	#name {
+			position: absolute;
+			left:20%;
+			top:8%;
+			font-size: 110px;
+			color:black;
+			letter-spacing: -2px;}
+
+	#w1 {color:	#ffbf00;}
+	#w3 {color:	#e0301e;}
+
+	#submit {	background-color:#128bb8;
+				font-size:30px;
+				padding:10px;
+				position:absolute;
+				border:3px solid white;
+				text-align:center;
+				left:260%;
+				top:21%;
+				}
+	#submit:hover {
+					background-color:white;
+					color:#128bb8;
+					}
+			
+			
+	#enter
+		{
+		position:absolute;
+		left:230%;
+		top:20%;
+		background-color:white;
+		color:black;
+		width:375px;
+		padding-left: 10px;
+		height:70px;
+		font-size:30px;
+		
+		
+		}
+			
+	.tab {
+			width:24%;
+			height:2%;
+			background-color:white;
+			position:absolute;
+			bottom:1%;
+			border-radius:15%;
+			}
+	
+	
+	a	{
+		text-decoration:none;
+			}
+	.arrows {
+			color:white;
+			font-size:40px;
+			position:absolute;
+			top:1%;
+			}
+	#r1 {
+			left:90%;}
+	#r2 {
+			left:190%;}
+	#l2 {
+			left:186%;}
+	#r3 {
+			left:288%;}
+	#l3 {
+			left:284%;}
+	
+	#rules {
+			font-size:60px;
+			position:absolute;
+			top:5%;
+			left:101%;
+			text-align:center;
+			width:100%;
+			text-align:center;
+			}
+		
+	#start {
+			font-size:80px;
+			position:absolute;
+			top:30%;
+			left:30%;
+			text-align:center;
+			}
+	.button {
+				padding:20px;
+				position:absolute;
+				border:3px solid white;
+				text-align:center;
+				}
+	.button:hover {
+					background-color:white;
+					color:#128bb8;
+					;}
+	#proceed {
+				left:39%;
+				top:60%;
+				font-size:40px;
+				}
+	#easy {
+			left:124%;
+			top:70%;
+			width:12%;
+			font-size:35px;}
+	#medium {
+			left:143%;
+			top:70%;
+			width:12%;
+			font-size:35px;}
+	#hard {
+			left:162%;
+			top:70%;
+			width:12%;
+			font-size:35px;}
+			
+	ul {
+		font-size:40px;
+		left:121%;
+		letter-spacing:-2px;
+		width:70%;
+		top:25%;
+		position:absolute;
+		}
+	.levels {
+			opacity:0;
+			}
+	.meanings {
+			opacity:0;
+			}
+			
+	.words {
+			background-color:white;
+			color:#128bb8;
+			font-size:20px;
+			padding :10px;
+			top:50%;
+			position:absolute;}
+	.words:hover {
+				background-color:black;
+				}
+
+	#list {
+			left:191%;
+			height:30%;
+			position:absolute;
+			top:40%;
+			background-color:white;}
+
+	#again {
+			position:absolute;
+			top:5%;
+			left:240%;
+			font-size:30px;
+			padding :10px;
+			background-color: #128bb8;
+			border: 3px solid white;
+			opacity:0;}
+
+	#again:hover {
+					background-color: white;
+					color:#128bb8;
+					}
+	#lose {
+			position:absolute;
+			top:1%;
+			left:290%;
+			font-size:20px;
+			padding :10px;
+			background-color: #f9b71f;
+			border: 3px solid black;
+			color:black;
+			opacity:1;}
+
+	#lose:hover {
+					background-color: red;
+					color:black;
+					}
+
+	.hints {
+			background-color: white;
+			color: #128bb8;
+			position: absolute;
+			top:65%;
+			left:210%;
+			width:80%;
+			padding: 10px;
+			text-align: center;}
+	.back{
+			top:30%;
+			position: absolute;
+			left:194%;
+			width:100%;
+			background-color:black;}
+	.square {
+			background-color:#128bb8 ;
+			height:30px;
+			width:30px;
+			top:1%;
+			position: absolute;}
+	#s1{left:98%;}
+	#s2{left:198%;}
+	#s3{left:298%;}
+	
+
+
+	</style>
+	
+
+</head>
+<body>
+<p  class="levels" id="easy1">{{easy}}</p>
+<p  class="levels" id="med1">{{medium}}</p>
+<p  class="levels" id="hard1">{{hard}}</p>
+<p  class="levels" id="measy">{{measy}}</p>
+<p  class="levels" id="mmed">{{mmedium}}</p>
+<p  class="levels" id="mhard">{{mhard}}</p>
+
+<!--
+<a class="arrows" id="r1" href="#rules">&#10095;</a>-->
+<p id="start">Let's Begin!</p>
+<p id="name"><span id="w1">Find</span> Your <span id="w3">Way</span></p>
+<a href="#rules"><div id="proceed" class="button">proceed </div></a>
+
+<div class="square" id="s1" ></div>
+<div class="square" id="s2" ></div>
+<div class="square" id="s3" ></div>
+<div class="square" id="s4" ></div>
+
+<p id="rules">How to Play</p>
+<ul>
+	<li>Get from the first word to the last</li>
+	<li>Change, add or delete one letter at a time</li>
+	<li>Each intermeidate step must be a word</li>
+	<li>Seems too hard? <br>Click on a box and we'll help you out :)</li>
+	<li>Choose a level to begin</li>
+</ul>
+<a href="#s3"><div id="easy" class="button">easy</div></a>
+<a href="#s3"><div id="medium" class="button">medium </div></a>
+<a href="#s3"><div id="hard" class="button">hard </div></a>
+<!--
+<div id="t1" class="tab"></div>
+<div id="t2" class="tab"></div>
+<div id="t3" class="tab"></div>
+<div id="t4" class="tab"></div>-->
+<div id="list"></div>
+<input type="text"  id="enter" placeholder="your word" >
+<input type="button" value="GO!" id="submit" onclick="check(document.getElementById('enter').value)">
+<a href="#s4"><input type="button" value="Try Again" id = "again" onclick="window.location.reload()"></a>
+<input type="button" value="give up" id="lose" onclick="answer()">
+
+<script>
+
+	//var l=205;	
+	var easy=document.getElementById("easy1");
+	var medium=document.getElementById("med1");
+	var hard=document.getElementById("hard1");
+	var easylist = easy.innerHTML.split(" ");
+	var medlist = medium.innerHTML.split(" ");
+	var hardlist = hard.innerHTML.split(" ");
+	var sub=document.getElementById("submit");
+	
+	var measy=document.getElementById("measy");
+	var mmed=document.getElementById("mmed");
+	var mhard=document.getElementById("mhard");
+	var measylist = measy.innerHTML.split("*");
+	var mmediumlist = mmed.innerHTML.split("*");
+	var mhardlist = mhard.innerHTML.split("*");
+	//window.alert(mhardlist);
+
+	var easyb=document.getElementById("easy");
+	var mediumb=document.getElementById("medium");
+	var hardb=document.getElementById("hard");
+	easyb.addEventListener("click",geneasy);
+	mediumb.addEventListener("click",genmedium);
+	hardb.addEventListener("click",genhard);
+	var text = document.getElementById("enter");
+	var entered = text.value;
+	var arr = [];
+	
+	var count = 1;
+	var usedlist;
+	
+	function geneasy(){
+		var left = 220;
+		fword = document.createElement("div");
+		ftemp = document.createTextNode(easylist[0]); 
+		lword = document.createElement("div");
+		ltemp=document.createTextNode(easylist[(easylist.length)-1]); 
+		fword.setAttribute("class","words");
+		fword.style.left= left + "%";
+		fword.appendChild(ftemp);
+		lword.setAttribute("class","words");
+		var l = left + 10*(easylist.length-1);
+		lword.style.left="280%";
+		lword.appendChild(ltemp);
+		
+		document.body.appendChild(fword);
+		document.body.appendChild(lword);
+		usedlist=easylist;
+		musedlist=measylist;
+		path_length = easylist.length - 1 ;
+		arr[arr.length]=easylist[0];
+		addDiv(left,280);
+	}
+
+	function genmedium(){
+		
+		fword = document.createElement("div");
+		ftemp = document.createTextNode(medlist[0]); 
+		lword = document.createElement("div");
+		ltemp=document.createTextNode(medlist[(medlist.length)-1]); 
+		fword.setAttribute("class","words");
+		fword.style.left= "201%";
+		fword.appendChild(ftemp);
+		lword.setAttribute("class","words");
+		var l = 201 + 10*(medlist.length-1);
+		lword.style.left= "290%";
+		lword.appendChild(ltemp);
+		musedlist=mmediumlist;
+		document.body.appendChild(fword);
+		document.body.appendChild(lword);
+		usedlist=medlist;
+		path_length = medlist.length - 1 ;
+		arr[arr.length]=medlist[0];
+		addDiv(210,290);
+	}
+	
+	function genhard(){
+		
+		fword = document.createElement("div");
+		ftemp = document.createTextNode(hardlist[0]); 
+		lword = document.createElement("div");
+		ltemp=document.createTextNode(hardlist[hardlist.length-1]); 
+		fword.setAttribute("class","words");
+		fword.style.left= "201%";
+		fword.appendChild(ftemp);
+		var left = 201;
+		lword.setAttribute("class","words");
+		var l = 201 + 10*(hardlist.length-1);
+		lword.style.left= "300%";
+		var right = 300;
+		lword.appendChild(ltemp);
+		musedlist=mhardlist;
+		document.body.appendChild(fword);
+		document.body.appendChild(lword);
+		usedlist=hardlist;
+		path_length = hardlist.length - 1 ;
+		arr[arr.length]=hardlist[0];
+		addDiv(left,right);
+	}
+
+	function addDiv(left,right){
+		//var left=fword.getAttribute("left");
+		//window.alert(left);
+		var le = left;
+		for(var i=1;i<usedlist.length-1;i++){
+			le=le + (right-left)/(usedlist.length-1) ;
+			var word = document.createElement("div");
+			 
+			word.setAttribute("class","words");
+			word.style.top="50%";
+			word.style.left=le +  "%";
+			ID = "word" + i ;
+			word.setAttribute("id",ID);
+			//window.alert(word.id);
+			
+			document.body.appendChild(word);
+			
+			word.setAttribute("onClick","hint(this)");
+			//word.addEventListener("click",hint);
+			
+
+			}
+	}
+
+	function answer(){
+
+			var del = document.querySelectorAll(".words");
+			//window.alert(del);
+			for (var d =0;d<del.length;d++){
+				document.body.removeChild(del[d]);
+			}
+			var id1=document.getElementById("enter");
+			var id2=document.getElementById("submit");
+			id1.parentNode.removeChild(id1);
+			id2.parentNode.removeChild(id2);
+			var hin=document.getElementById("hint");
+			hin.parentNode.removeChild(hin);
+
+			var back = document.createElement("div");
+			back.setAttribute("id","back");
+			back.style.backgroundColor = "#128bb8";
+			var left=205;
+			for(var i=0;i<usedlist.length;i++){
+				var word = document.createElement("div");
+				var temp=document.createTextNode(usedlist[i]); 
+				word.setAttribute("class","words");
+				word.style.top="45%";
+				word.style.left=left +  "%";
+				word.appendChild(temp);
+				back.appendChild(word);
+				left=left + 10 ;
+			}
+			document.body.appendChild(back);
+			var try_again = document.getElementById("again");
+			try_again.style.opacity = "1";
+	}
+	
+	
+
+	function hint(obj){
+		var ID = obj.getAttribute("id");
+		var a = ID.split("");
+		var num =  parseInt(a[4]);
+		var h = document.createElement("div");
+		var ht=document.createTextNode(musedlist[num]);
+		h.appendChild(ht);
+		h.setAttribute("class","hints");
+		h.setAttribute("id","hint");
+		h.appendChild(ht);
+		h.style.width="80%";
+		h.style.height="30%";
+		document.body.appendChild(h);
+		
+	}
+	
+	
+	function inArray(entered,arr){
+		for(var i =0;i<arr.length;i++){
+			if(entered==arr[i])
+				return 1;
+		}
+		return 0;
+	}
+
+	function addText(entered,i){
+		ID= "word" + i;
+		var c = document.getElementById(ID);
+		var temp=document.createTextNode(entered);
+		c.appendChild(temp);
+		//var hint=document.getElementById("hint");
+		//hint.parent.removeChild(hint);
+
+	}
+	
+	function check(entered){
+		if(inArray(entered,arr))
+			window.alert("Already entered!!");
+		else{
+			if(entered==usedlist[count]){
+				addText(entered,count);	
+				count++;
+				}
+			else
+				window.alert("Sorry! wrong word :(");
+			}
+		if(count==usedlist.length-1){
+			window.alert("Awesome!You did it!");
+			var try_again = document.getElementById("again");
+			try_again.style.opacity = "1";
+			}	
+		}
+	
+	
+
+</script>	
+</body>
+</html>
